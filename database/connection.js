@@ -2,7 +2,7 @@ import 'dotenv/config'
 import pg from 'pg'
 const { Pool } = pg
 
-const pool = new Pool({
+export const pool = new Pool({
     allowExitOnIdle: true,
     connectionString: process.env.CONNECTION_STRING
 })

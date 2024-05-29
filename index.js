@@ -1,13 +1,16 @@
 import express from 'express'
 import 'dotenv/config'
-const app = express()
+import router from './routes/repertorio.route.js'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
-// leer req.body
+const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// archivos estaticos
-const __dirname = import.meta.dirname
+app.use('/', router)
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 app.use(express.static(__dirname + '/public'))
 
 const PORT = process.env.PORT

@@ -1,5 +1,4 @@
 import { pool } from '../database/connection.js'
-
 const seleccionar = async () => {
     const { rows } = await pool.query("SELECT * FROM canciones")
     return rows

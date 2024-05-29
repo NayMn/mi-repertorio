@@ -1,6 +1,6 @@
 import { Router } from "express";
-import { cancionesController, repertorioController } from '../controllers/repertorio.controller.js'
-const router = Router()
+import { cancionesController } from '../controllers/repertorio.controller.js';
+const router = Router();
 
 router.get('/canciones', cancionesController.cancionesGet)
 router.post('/cancion', cancionesController.cancionesPost)
